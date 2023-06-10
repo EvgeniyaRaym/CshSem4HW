@@ -8,22 +8,28 @@ Console.Write("Эта программа возведет первое числ�
 int a = int.Parse(Console.ReadLine());
 Console.Write("Введите второе число:");
 int b = int.Parse(Console.ReadLine());
-int B = b;
-int result = 1;
 
-if (b<0)
+int deg(int a,int b)
 {
-    Console.WriteLine($"Второе должно быть натуральным. {b} это не натуральное число. Введите второе число:");
-    b = int.Parse(Console.ReadLine());
-    B = b;
+    int B = b;
+    int result = 1;
+
+    if (b<0)
+    {
+        Console.WriteLine($"Второе должно быть натуральным. {b} это не натуральное число. Введите второе число:");
+        b = int.Parse(Console.ReadLine());
+        B = b;
+    }
+
+    else 
+    {
+        while (b!=0)
+        {
+            result = result*a;
+            b = b-1;
+        }
+        }
+    return result;  
 }
 
-else 
-{
-while (b!=0)
-    {
-   result = result*a;
-   b = b-1;
-   }
-Console.WriteLine($"Число {a} в степени {B} равно {result}");
-}   
+Console.WriteLine($"Число {a} в степени {b} равно {deg(a,b)}");
